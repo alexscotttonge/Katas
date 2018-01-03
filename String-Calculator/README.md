@@ -1,6 +1,6 @@
 # String Calculator
 
-A daily exercise in TDD'ing, coding and refactoring. Each day I'll be restarting from the beginning to see how far I can get at each attempt.
+An exercise in TDD'ing, coding and refactoring. Restarting the Kata from the beginning over a period of 2 weeks as a daily exercise.
 
 ## Requirements
 - Create a simple String calculator with a method Add('string numbers')
