@@ -12,7 +12,8 @@ class Calculator
   end
 
   def total
-    basket.sum * @book_price
+    return 0 if basket.sum == 0
+    else basket.length * @book_price
   end
 
 end

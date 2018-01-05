@@ -10,9 +10,8 @@ describe Calculator do
   end
 
   it 'should return 8 for one book' do
-    calculator.add_item(1)
+    calculator.add_item(4)
     expect(calculator.total).to eq 8
   end
-
 
 end
