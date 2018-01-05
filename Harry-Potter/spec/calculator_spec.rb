@@ -14,4 +14,11 @@ describe Calculator do
     expect(calculator.total).to eq 8
   end
 
+  it 'should not give a discount for multiple copies of same book' do
+    calculator.add_item(3)
+    calculator.add_item(3)
+    calculator.add_item(3)
+    expect(calculator.total).to eq 24
+  end
+
 end
