@@ -1,9 +1,17 @@
 class Calculator
 
-  attr_reader :total
+  attr_reader :total, :basket
 
-  def total(basket)
-    return 0 if basket == 0 
+  def initialize
+    @basket = []
+  end
+
+  def add_item(book)
+    basket.push(book)
+  end
+
+  def total
+    return 0 if basket.sum == 0
   end
 
 end

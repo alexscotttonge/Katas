@@ -5,7 +5,8 @@ describe Calculator do
   let(:calculator) { Calculator.new }
 
   it 'should calculate cost of empty basket' do
-    expect(calculator.total(0)).to eq 0
+    calculator.add_item(0)
+    expect(calculator.total).to eq 0
   end
 
 
