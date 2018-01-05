@@ -21,4 +21,10 @@ describe Calculator do
     expect(calculator.total).to eq 24
   end
 
+  it 'should give a 5% discount for two copies of a different book' do
+    calculator.add_item(1)
+    calculator.add_item(2)
+    expect(calculator.total).to eq 15.2
+  end
+
 end
