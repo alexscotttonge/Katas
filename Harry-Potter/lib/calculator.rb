@@ -1,5 +1,4 @@
 class Calculator
-
   attr_reader :total, :basket
 
   def initialize
@@ -13,14 +12,14 @@ class Calculator
   end
 
   def total
-    return 0 if basket.sum == 0
-    return basket.length * @book_price * @discount_percentage if has_discount?
+    return 0 if basket.sum.zero?
+    return basket.length * @book_price * @discount_percentage if discount?
     basket.length * @book_price
   end
 
   private
-  def has_discount?
+
+  def discount?
     basket.uniq.length >= 2
   end
-
 end

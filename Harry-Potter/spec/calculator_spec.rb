@@ -1,7 +1,6 @@
 require 'calculator'
 
 describe Calculator do
-
   let(:calculator) { Calculator.new }
 
   it 'should calculate cost of empty basket' do
@@ -26,5 +25,4 @@ describe Calculator do
     calculator.add_item(2)
     expect(calculator.total).to eq 15.2
   end
-
 end
