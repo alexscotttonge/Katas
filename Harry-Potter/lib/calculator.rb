@@ -4,6 +4,7 @@ class Calculator
 
   def initialize
     @basket = []
+    @book_price = 8
   end
 
   def add_item(book)
@@ -11,7 +12,7 @@ class Calculator
   end
 
   def total
-    return 0 if basket.sum == 0
+    basket.sum * @book_price
   end
 
 end
