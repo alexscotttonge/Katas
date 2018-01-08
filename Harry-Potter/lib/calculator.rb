@@ -1,9 +1,11 @@
 class Calculator
   attr_reader :total, :basket
 
+  CONST_BOOK_PRICE = 8
+
   def initialize
     @basket = []
-    @book_price = 8
+    @book_price = CONST_BOOK_PRICE
     @discount_percentage = 0.95
   end
 
