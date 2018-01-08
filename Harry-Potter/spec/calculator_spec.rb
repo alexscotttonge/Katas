@@ -52,4 +52,21 @@ describe Calculator do
     calculator.basket_items(5)
     expect(calculator.total).to eq 21.6
   end
+
+  it 'should give a 20% discount for four different books' do
+    calculator.basket_items(2)
+    calculator.basket_items(3)
+    calculator.basket_items(4)
+    calculator.basket_items(5)
+    expect(calculator.total).to eq 25.6
+  end
+
+  it 'should give a 25% discount for five different books' do
+    calculator.basket_items(1)
+    calculator.basket_items(2)
+    calculator.basket_items(3)
+    calculator.basket_items(4)
+    calculator.basket_items(5)
+    expect(calculator.total).to eq 30
+  end
 end
