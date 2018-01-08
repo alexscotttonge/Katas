@@ -17,13 +17,18 @@ class Calculator
 
   def total
     return 0 if basket.basket_items.sum.zero?
-    return basket.basket_items.length * @book_price * @discount_percentage if discount?
-    basket.basket_items.length * @book_price
+    basket.basket_items.length * @book_price * discount_amount
   end
 
   private
 
-  def discount?
-    basket.basket_items.uniq.length >= 2
+  DISCOUNTS = {1 => 1, 2 => 0.95, 3 => 0.9, 4 => 0.8, 5 => 0.75}
+
+  def number_unique_copies
+    basket.basket_items.uniq.length
+  end
+
+  def discount_amount
+    DISCOUNTS[number_unique_copies]
   end
 end
