@@ -1,5 +1,4 @@
 class Basket
-
   attr_reader :basket_items
 
   def initialize
@@ -9,5 +8,4 @@ class Basket
   def add_item(book_ID)
     basket_items.push(book_ID)
   end
-
 end
