@@ -1,27 +1,29 @@
+require_relative 'basket'
+
 class Calculator
   attr_reader :total, :basket
 
   CONST_BOOK_PRICE = 8
 
-  def initialize
-    @basket = []
+  def initialize(basket)
+    @basket = basket
     @book_price = CONST_BOOK_PRICE
     @discount_percentage = 0.95
   end
 
-  def add_item(book)
-    basket.push(book)
+  def basket_items(book_ID)
+    basket.add_item(book_ID)
   end
 
   def total
-    return 0 if basket.sum.zero?
-    return basket.length * @book_price * @discount_percentage if discount?
-    basket.length * @book_price
+    return 0 if basket.basket_items.sum.zero?
+    return basket.basket_items.length * @book_price * @discount_percentage if discount?
+    basket.basket_items.length * @book_price
   end
 
   private
 
   def discount?
-    basket.uniq.length >= 2
+    basket.basket_items.uniq.length >= 2
   end
 end
