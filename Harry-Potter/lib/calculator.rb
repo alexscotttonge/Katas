@@ -10,7 +10,7 @@ class Calculator
     @book_price = CONST_BOOK_PRICE
   end
 
-  def basket_items(book_ID)
+  def add_basket_items(book_ID)
     basket.add_item(book_ID)
   end
 
