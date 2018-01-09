@@ -22,11 +22,20 @@ class Calculator
     basket.basket_items.sum.zero?
   end
 
+  def sub_total
+    number_unique_copies * CONST_BOOK_PRICE * discount_amount
+  end
+
+  def remainder_books
+    number_of_books - number_unique_copies
+  end
+
+  def remainder_price
+    remainder_books * CONST_BOOK_PRICE
+  end
+
   def total
     return 0 if empty_basket?
-    sub_total = number_unique_copies * CONST_BOOK_PRICE * discount_amount
-    remainder_books = number_of_books - number_unique_copies
-    remainder_price = remainder_books * CONST_BOOK_PRICE
     sub_total + remainder_price
   end
 
