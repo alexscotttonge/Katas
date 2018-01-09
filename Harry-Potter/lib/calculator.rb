@@ -24,18 +24,21 @@ class Calculator
 
   def total
     return 0 if empty_basket?
-    number_of_books * CONST_BOOK_PRICE * discount_amount
+    sub_total = number_unique_copies * CONST_BOOK_PRICE * discount_amount
+    remainder_books = number_of_books - number_unique_copies
+    remainder_price = remainder_books * CONST_BOOK_PRICE
+    sub_total + remainder_price
   end
 
   private
 
-  DISCOUNTS = {1 => 1, 2 => 0.95, 3 => 0.9, 4 => 0.8, 5 => 0.75}
+  CONST_DISCOUNTS = { 1 => 1, 2 => 0.95, 3 => 0.9, 4 => 0.8, 5 => 0.75 }
 
   def number_unique_copies
     basket.basket_items.uniq.length
   end
 
   def discount_amount
-    DISCOUNTS[number_unique_copies]
+    CONST_DISCOUNTS[number_unique_copies]
   end
 end
