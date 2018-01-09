@@ -76,4 +76,12 @@ describe Calculator do
     calculator.basket_items(2)
     expect(calculator.total).to eq 23.2
   end
+
+  it 'should give the correct discount for only two different copies' do
+    calculator.basket_items(1)
+    calculator.basket_items(5)
+    calculator.basket_items(5)
+    calculator.basket_items(5)
+    expect(calculator.total).to eq 31.2
+  end
 end
