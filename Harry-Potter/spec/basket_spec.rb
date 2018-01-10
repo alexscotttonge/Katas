@@ -1,7 +1,7 @@
 require 'basket'
 
 describe Basket do
-  let(:basket) { Basket.new }
+  subject(:basket) { described_class.new }
 
   it 'should add an item to the basket' do
     basket.add_item(4)

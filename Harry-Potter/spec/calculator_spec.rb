@@ -14,8 +14,8 @@ describe Calculator do
     end
   end
 
-  let(:basket) { BasketDouble.new }
-  let(:calculator) { Calculator.new(basket) }
+  subject(:basket) { BasketDouble.new }
+  subject(:calculator) { described_class.new(basket) }
 
   it 'should calculate cost of empty basket' do
     calculator.add_basket_items(0)
