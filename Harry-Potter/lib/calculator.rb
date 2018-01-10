@@ -7,7 +7,6 @@ class Calculator
 
   def initialize(basket)
     @basket = basket
-    @book_price = CONST_BOOK_PRICE
   end
 
   def add_basket_items(book_ID)
